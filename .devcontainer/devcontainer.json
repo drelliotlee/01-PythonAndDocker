@@ -17,5 +17,11 @@
     },
     "workspaceFolder": "/workspace",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
-    "postCreateCommand": "pip install --no-cache-dir --no-input -r requirements.txt"
+    "postCreateCommand": "pip install --no-cache-dir --no-input -r requirements.txt",
+    "remoteEnv": {
+        "SSH_AUTH_SOCK": "/ssh-agent"
+    },
+    "mounts": [
+        "source=${env:SSH_AUTH_SOCK},target=/ssh-agent,type=bind"
+    ]
 }

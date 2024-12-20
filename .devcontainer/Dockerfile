@@ -1,9 +1,15 @@
 FROM python:3-slim
 
-# Set the working directory inside the container
-WORKDIR /app
+# Set the working directory
+WORKDIR /workspace
 
-# Copy the requirements file and install dependencies
+# Install system dependencies, including Git and SSH
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    openssh-client \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Copy the requirements file and install Python dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 

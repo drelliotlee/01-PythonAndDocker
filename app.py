@@ -9,6 +9,7 @@ def main():
 
     print(iris_df)
     print("foo")
+    print('asdf')
 
 if __name__ == "__main__":
     main()
