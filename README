@@ -1,0 +1,7 @@
+Dec 21, 2024
+In this project, I did the following:
+
+- created a MWE (miinimal working example) python script and dockerized it locally
+- then ran the same script within dev containers and confirmed that changes made inside the container were reflected locally
+- then set up my dev container to also handle SSH and git, so that I can push changes from within the container
+
